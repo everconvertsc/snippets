@@ -1,0 +1,86 @@
+/*** SERVER ***/
+
+// Add revisions —> wp-config.php
+
+define( 'WP_POST_REVISIONS', 3 );
+
+
+
+/*** GENERAL WP CODE ***/
+
+
+// Open External Links on New Tab
+// Add it in functions.php
+
+<script>	
+    jQuery(document).ready(function($) {
+        $('a')
+        .filter('[href^="http"], [href^="//"]')
+        .not('[href*="' + window.location.host + '"]')
+        .attr('rel', 'noopener noreferrer')
+        .attr('target', '_blank');
+    });
+</script>  
+
+
+// YEAR SHORTCODE
+// Add it in functions.php
+// To display the year add [year] in a text element
+
+
+function year_shortcode() {
+  $year = date('Y');
+  return $year;
+}
+add_shortcode('year', 'year_shortcode');
+
+
+
+/*** CF7 ***/
+
+// RETRIEVE URL CF7
+// Add it in functions.php
+// Front ed form: <div class="referer-page">[text referer-page]</div>
+// Back end form: This e-mail was submitted from ([referer-page])
+
+function getRefererPage( $form_tag )
+{
+if ( $form_tag['name'] == 'referer-page' ) {
+$form_tag['values'][] = htmlspecialchars($_SERVER['HTTP_REFERER']);
+}
+return $form_tag;
+}
+if ( !is_admin() ) {
+add_filter( 'wpcf7_form_tag', 'getRefererPage' );
+}
+
+
+
+/*** OTHER PLUGINS ***/
+
+
+// Admin Message
+// Plugin Name: KJM Admin Notices
+
+<div style="border:solid 5px red; padding: 20px;"><img class="alignnone size-medium" src="https://media.giphy.com/media/YmtPCTenOz55CAZCJK/giphy.gif" width="500" height="100" />
+
+We are currently working on the staging environment. Please <strong>DO NOT</strong> make any changes to the live site.
+
+Please <a href="https://staging-mcworleyprod.kinsta.cloud/login">login here</a> if you need to complete a task.
+
+For any questions email me dvera@everconvert.com
+</div>
+
+
+
+/*** ELEMENTOR ***/
+
+// Close Toggle in Elementor
+// Add it as a HTML element near by the toggle section
+
+<script> jQuery(document).ready(function($) 
+{ var delay = 100; setTimeout(function() 
+{ $('.elementor-tab-title').removeClass('elementor-active'); 
+$('.elementor-tab-content').css('display', 'none'); }, delay); 
+}); </script> 
+
