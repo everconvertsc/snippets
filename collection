@@ -23,6 +23,18 @@ define( 'WP_POST_REVISIONS', 3 );
     });
 </script>  
 
+// CHAT SCRIPT
+
+<script type="text/javascript">
+
+    if(jQuery('body').hasClass('logged-in')){
+    } else {
+      
+        jQuery('body').append('<script src="//sellwithchat.com/scripts/invitation.ashx?company=howardarca" async></' + 'script>');    
+    }
+  
+</script>
+
 
 // YEAR SHORTCODE
 // Add it in functions.php
