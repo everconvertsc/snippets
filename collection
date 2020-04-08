@@ -23,6 +23,7 @@ define( 'WP_POST_REVISIONS', 3 );
     });
 </script>  
 
+
 // CHAT SCRIPT
 
 <script type="text/javascript">
