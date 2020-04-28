@@ -69,6 +69,41 @@ add_filter( 'wpcf7_form_tag', 'getRefererPage' );
 
 
 
+/*** REVIEW SCHEMA MARKUP ***/
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org/",
+        "@type": "Review",
+        "reviewBody": "YOUR NICE REVIEW GOES HERE",
+        
+        "itemReviewed": {
+            "@type": "LegalService",
+            "name": "CLIENT'S NAME",
+            "telephone": "(713) 804-6684",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "MAIN ADDRESS SAME AS GMB",
+                "addressLocality": "CITY",
+                "addressRegion": "STATE",
+                "postalCode": "ZIPCODE"
+            },
+        "image": "https://your-logo'jpg"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "NAME OF REVIEWER"
+        },
+        "reviewRating": {
+            "@type": "Rating",
+            "worstRating": "1",
+            "ratingValue": "5",
+            "bestRating": "5"
+        }
+    }
+</script>
+
+
 /*** OTHER PLUGINS ***/
 
 
