@@ -48,6 +48,68 @@ function year_shortcode() {
 add_shortcode('year', 'year_shortcode');
 
 
+// CUSTOM LOGIN SCREEN
+
+add_action('login_head','change_my_login_screen');
+
+function change_my_login_screen() {
+    echo '<style>
+  		body {
+            background-image: url(https://everconvert.com/wp-content/uploads/2020/06/ec-login-bg.jpg);
+            -webkit-background-size: cover!important;
+            background-size: cover!important;
+        }
+        .login h1 a {
+            background-image: url(https://everconvert.com/wp-content/uploads/2020/06/everconvert-logo.png);
+            -webkit-background-size: contain!important;
+            background-size: contain!important;
+            height: 64px;
+          	width: 250px;
+          	margin-bottom: 10px!important; 
+          	transition-duration: .3s;
+  		}  
+        .login h1 a:hover {
+          	transform: scale(1.1);
+          	transition-duration: .3s;
+    		transition-property: transform;
+        }
+        .login form {
+            background-color: #000!important;
+          	border: solid 1px #333!important;
+        }
+  		.login label {
+        	color: #acacac;  
+  		}  
+        .login form .input {
+        	background-color: #111;
+          	border: solid 1px #363636;
+        }
+        .login input[type="text"] {
+          	color: #acacac;
+        }
+        .login form .input input[type="text"]:focus, input[type="password"]:focus, input[type="checkbox"]:focus {
+			box-shadow: 0 0 0 1px #00bff3;
+        }
+        .wp-core-ui .button-primary {
+			background-color: #6fb744;
+          	border-color: #6fb744;
+        }
+        .wp-core-ui .button-primary:hover {
+			background-color: #7bdf3f;
+          	border-color: #7bdf3f;
+        }
+        .login #backtoblog a, .login #nav a {
+			color: #6fb744;
+        }
+  		.login #nav a:hover {
+        	color:#7bdf3f;  
+  		}
+  		.login #backtoblog a:hover {
+  			color:#7bdf3f;
+  		}
+  	</style>';
+}
+
 
 /*** CF7 ***/
 
